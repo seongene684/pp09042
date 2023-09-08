@@ -1,0 +1,671 @@
+main{
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background-color: #FAD6D6;
+	overflow: hidden;
+	
+	section{
+		article{
+			width: 24vw;
+			height: 60vh;
+			position:absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -30vh;
+			margin-left: -12vw;
+			z-index: 1;
+			overflow: hidden;
+			transition-property: width, height, transform, opacity, margin-left, margin-top,top,left;
+			transition-duration: 0.5s;
+			transition-delay: 0s;
+			box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
+			
+			.txt{
+				width: 100%;
+				height: 40%;
+				background-color: #000;
+				padding: 30px 20px 20px;
+				position: absolute;
+				top: 0;
+				right: 0;
+				transition: 0.5s;
+
+				strong{
+					font: bold 14px/1 "arial";
+					color: #ddd;
+				}
+				p{
+					font: 14px/1 "arial";
+					color: #888;
+				}
+				i{
+					font-size: 20px;
+					color: #888;
+					position: absolute;
+					top: 40px;
+					right: 40px;
+
+				}
+				h2{
+					font: 5vw/1 "crimson text";
+					color: #fff;
+					position: absolute;
+					bottom: -3vw;
+					left: 20px;
+					z-index: 2;
+					transition: 0.5s;
+					text-shadow: 5px 5px 3px rgba(0,0,0,0.2);
+
+					&::before{
+						content: '';
+						width: 0%;
+						height: 1px;
+						background-color: #fff;
+						top: -10px;
+						left: 0;
+						transition: width 1s 0.5s;
+					}
+				}
+
+				.desc{
+					width: 60%;
+					opacity: 0;
+					position: absolute;
+					top: 60%;
+					left: 5vw;
+					transition: 0.5s;
+					font: 16px/1.3 "arial";
+					color: #888;
+
+				}
+			}
+			.pic{
+				width: 100%;
+				height: 60%;
+				background-color: #000;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: 0.5s;
+
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+					opacity: 0.5;
+					transition: opacity 0.5s;
+				}
+			}
+
+			.open{
+				width: 0%;
+				height: 60px;
+				background-color: #000;
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				overflow: hidden;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				cursor: pointer;
+				transition: 0.5s;
+
+				span{
+					font: 16px/1 "crimson text";
+					color: #fff;
+					transform: translateX(-200px);
+					opacity: 0;
+					transition: 0.5s;
+				}
+				i{
+					margin-right: -100px;
+					opacity: 0;
+					color: #555;
+					transition: 0.5s;
+				}
+			}
+			.close{
+				cursor: pointer;
+				position: absolute;
+				top: 10vh;
+				right: -10vh;
+				color: #ddd;
+				opacity: 0;
+				transition: all 0.5s;
+			}
+
+			&:nth-of-type(1){
+				transform: translateX(-400%);
+				opacity: 0;
+			}
+			&:nth-of-type(2){
+				transform: translateX(-130%) ;
+				opacity: 0.8;
+			}
+			&:nth-of-type(3){
+				transform: translateX(0%);
+				opacity: 1;
+				
+				.txt{
+					h2::before{
+						width: 4vw;
+					}
+				}
+
+				.pic{
+					img{
+						opacity: 1;
+					}
+				}
+				.open{
+					width: 100%;
+
+					span{
+						transform: translateX(20px);
+						opacity: 1;
+						transition: 0.5s 0.5s;
+					}
+					i{
+						margin-right: 30px;
+						opacity: 1;
+						transition: 0.5s 0.8s;
+					}
+				}
+			}
+			&:nth-of-type(4){
+				transform: translateX(130%) ;
+				opacity: 0.8;
+			}
+			&:nth-of-type(5){
+				transform: translateX(400%) ;
+				opacity: 0;
+			}
+		}
+
+		article.on{
+			width: 100%;
+			height: 100%;
+			margin-top: 0;
+			margin-left: 0;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			transition-duration: 0.8s;
+
+			.txt{
+				width: 60%;
+				height: 100%;
+				padding: 5vw;
+				transition: 0.5s 0.5s;
+
+				h2{
+					bottom: calc(100% - 5vw - 200px);
+					left: 5vw;
+					transition: 0.5s;
+				}
+				.desc{
+					opacity: 1;
+					top: 50%;
+					transition: 1s 1s;
+				}
+			}
+			.pic{
+				width: 40%;
+				height: 100%;
+				transition: 0.5s 0.5s;
+			}
+			
+			.open{
+				opacity: 0;
+				margin-top: 1000px;
+			}
+			.close{
+				opacity: 1;
+				right: 10vw;
+				transition: 0.5s 1s;
+				transition-timing-function: cubic-bezier(0.48, -0.67, 0.54, 1.68);
+			}
+		}
+		article.hide{
+			margin-top: -1000px;
+			opacity: 0;
+		}
+	}
+
+	nav{
+		position: absolute;
+		bottom: 10vh;
+		right: 10vw;
+		display: flex;
+		gap: 50px;
+		transition: 0.5s;
+
+		&::before{
+			content: "";
+			height: 150%;
+			width: 1px;
+			background-color: #000;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) rotate(-60deg);
+		}
+		p{
+			width: 100px;
+			height: 40px;
+			position: relative;
+			color: #000;
+			cursor: pointer;
+
+			span{
+				font: italic 12px/1 "arial";
+				display: inline-block;
+			}
+			&::before{
+				content: '';
+				position: absolute;
+				width: 0%;
+				height: 1px;
+				background-color: #000;
+				top: 50%;
+				transition: 0.2s 0.2s;
+				opacity: 1;
+			}
+			&::after{
+				content: '';
+				position: absolute;
+				width: 0px;
+				height: 1px;
+				background-color: #000;
+				top: 50%;
+				opacity: 1;
+				transition: 0.2s 0s;
+			}
+			&.prev{
+				text-align: right;
+				
+				span{
+					transform: translateY(20px);
+				}
+				&::before{
+					right: 0px;
+				}
+				&::after{
+					transform: rotate(30deg);
+					left: 0;
+					transform-origin: left center;
+				}
+			}
+			&.next{
+				text-align: left;
+
+				span{
+					transform: translateY(-5px);
+				}
+				&::before{
+					left: 0;
+				}
+				&::after{
+					transform: rotate(30deg);
+					right: 0;
+					transform-origin: right center;
+				}
+			}
+
+
+		}
+		p:hover{
+			&.next,
+			&.prev{
+				&::before{
+					width: 100%;
+					transition: 0.2s;
+				}
+
+				&::after{
+					width: 40px;
+					transition: 0.2s 0.2s;
+				}
+			}
+		}
+	}
+	
+}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//news
+#news {
+	width: 100%;
+	padding: 0px 0px 70px;
+	background-color: #FAD6D6;
+	overflow: hidden;
+	
+
+	.inner {
+		width: 2000px;
+		margin: 0 auto;
+		position: relative;
+		margin-left: 0px;
+		// text-align: center;
+		
+
+		
+
+		h1 {
+			font: bold 50px/1 "arial";
+			color: #000;
+			// text-align: center;
+			margin-bottom: 20px;
+			margin-top: 200px;
+			text-align: center;
+			
+			
+			
+		}
+
+		.wrap {
+			height: 100%;
+			width: 100%;
+			background-color: #000;
+			padding: 20px;
+
+			article {
+				float: left;
+				width: 300px;
+				margin-left: 70px;
+				
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+
+				.pic {
+					width: 100%;
+					height: 240px;
+					overflow: hidden;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						transition: 0.5s;
+						padding: 2px;
+						
+						
+						
+					}
+
+					&:hover {
+						img {
+							transform: scale(1.2);
+						}
+					}
+				}
+
+				h2 {
+					margin-bottom: 10px;
+
+					a {
+						font: bold 16px/1 "arial";
+						color: #fff;
+						text-align: center;
+					}
+				}
+
+				p {
+					font: 14px/1.3 "arial";
+					color: #777;
+					
+					
+				}
+			}
+		}
+	}
+}
+
+#brand {
+	width: 100%;
+	padding: 200px 0;
+	background: #FAD6D6;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+		position: relative;
+
+		h1 {
+			font: bold 24px/1 "arial";
+			color: #555;
+			text-align: center;
+			margin-bottom: 50px;
+		}
+
+		.wrap {
+			width: 100%;
+
+			article {
+				&:nth-of-type(1) {
+					width: 1000px;
+					height: 620px;
+					background: #444;
+					float: left;
+					margin-right: 20px;
+					padding: 170px 50px 0;
+					text-align: center;
+
+					// i {
+					// 	font-size: 100px;
+					// 	color: #fff;
+					// 	margin-bottom: 20px;
+					// }
+
+					// h2 {
+					// 	font: bold 20px/1 "arial";
+					// 	color: #fff;
+					// 	margin-bottom: 30px;
+					// }
+
+					// p {
+					// 	font: 14px/1.3 "arial";
+					// 	color: #999;
+					// 	margin-bottom: 30px;
+					// }
+
+					// a {
+					// 	display: block;
+					// 	width: 150px;
+					// 	height: 30px;
+					// 	font: 11px/30px "arial";
+					// 	color: #ddd;
+					// 	border: 1px solid #bbb;
+					// 	margin: 0 auto;
+					// }
+				}
+
+				&:nth-of-type(2) {
+					width: 380px;
+					height: 300px;
+					float: left;
+					margin-right: 20px;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				&:nth-of-type(3) {
+					width: 380px;
+					height: 300px;
+					float: left;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+				}
+
+				&:nth-of-type(4) {
+					width: 780px;
+					height: 300px;
+					float: left;
+					margin-top: 20px;
+					position: relative;
+
+					img {
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+					}
+
+					&::after {
+						content: "";
+						display: block;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						background: linear-gradient(45deg,
+								rgba(255, 192, 203, 0.4),
+								rgba(173, 216, 230, 0.4));
+						opacity: 0;
+						transition: 0.5s;
+					}
+
+					&:hover {
+						&::after {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+#banner {
+	width: 100%;
+	padding: 150px 0;
+	background: url(../../img/222.jpg) no-repeat center/cover fixed;
+
+	.inner {
+		width: 1180px;
+		margin: 0 auto;
+
+		h1 {
+			font: bold 30px/1 "arial";
+			color: #fff;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+
+		p {
+			font: 16px/1.3 "arial";
+			color: #bbb;
+			text-align: center;
+		}
+	}
+}
+
+// #comments {
+// 	width: 100%;
+// 	padding: 150px 0;
+// 	background: #FAD6D6;
+
+// 	.inner {
+// 		width: 1180px;
+// 		margin: 0 auto;
+
+// 		h1 {
+// 			font: bold 24px/1 "arial";
+// 			color: #000;
+// 			text-align: center;
+// 			margin-bottom: 50px;
+// 		}
+
+// 		ul {
+// 			width: 100%;
+
+// 			li {
+// 				width: 100%;
+// 				border: 1px solid #111;
+// 				padding: 15px 20px;
+// 				margin-bottom: 20px;
+
+// 				&::after {
+// 					content: "";
+// 					display: block;
+// 					clear: both;
+// 				}
+
+// 				&:hover {
+// 					background: #444;
+
+// 					a {
+// 						color: #fff;
+// 					}
+
+// 					span {
+// 						color: #ddd;
+// 					}
+// 				}
+
+// 				a {
+// 					font: 12px/1 "arial";
+// 					color: #555;
+// 					float: left;
+// 				}
+
+// 				span {
+// 					font: 12px/1 "arial";
+// 					columns: #888;
+// 					float: right;
+// 				}
+// 			}
+// 		}
+// 	}
+// }

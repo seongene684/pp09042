@@ -1,0 +1,28 @@
+.content{
+    width: 100%;
+    padding: 0 0 150px;
+    .sub_visual{
+        width: 100%;
+        height: 250px;
+        background-color: #bbb;
+        margin-bottom: 100px;
+    }
+    .inner{
+        width: 1180px;
+        margin: 0 auto;
+        min-height: 500px;
+        h1{
+            font: normal 50px/1 "arial";
+            color: #000;
+            margin-bottom: 60px;
+            span{
+                font: normal 20px/1 "맑은 고딕";
+                color: #aaa;
+                &::before{
+                    content: "/";
+                    margin: 0 20px 0 10px;
+                }
+            }
+        }
+    }
+}

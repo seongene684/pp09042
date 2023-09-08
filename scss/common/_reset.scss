@@ -1,0 +1,29 @@
+@charset 'utf-8';
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.hidden {
+	position: absolute;
+	top: -99999999px;
+	opacity: 0;
+}
+
+.wrap::after {
+	content: "";
+	display: block;
+	clear: both;
+}
