@@ -29,7 +29,7 @@ a {
 
 #header {
   width: 100%;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid #000;
   background-color: #000;
 }
 #header .inner {
@@ -62,8 +62,8 @@ a {
   color: #fff;
 }
 #header .inner .menuWeb #gnb li a:hover {
-  background: #555;
-  color: #fff;
+  background: pink;
+  color: #000;
 }
 #header .inner .menuWeb .util {
   position: absolute;
@@ -175,7 +175,9 @@ a {
 
 #header_sub {
   width: 100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #000;
+  background-color: #000;
+  color: #000;
 }
 #header_sub .inner {
   width: 1180px;
@@ -190,7 +192,7 @@ a {
 }
 #header_sub .inner > h1 > a {
   font: bold 24px/1 "arial";
-  color: #444;
+  color: #fff;
 }
 #header_sub .inner .menuWeb #gnb {
   position: absolute;
@@ -204,11 +206,11 @@ a {
   display: block;
   padding: 14px 40px;
   font: bold 14px/1 "arial";
-  color: #777;
+  color: #fff;
 }
 #header_sub .inner .menuWeb #gnb li a:hover {
-  background: #555;
-  color: #fff;
+  background: pink;
+  color: #000;
 }
 #header_sub .inner .menuWeb .util {
   position: absolute;
@@ -320,12 +322,13 @@ a {
 
 .content {
   width: 100%;
-  padding: 0 0 150px;
+  padding: 90px 0 150px;
+  background-color: #FAD6D6;
 }
 .content .sub_visual {
   width: 100%;
   height: 250px;
-  background-color: pink;
+  background-color: #FAD6D6;
   margin-bottom: 100px;
   position: relative;
 }
@@ -339,12 +342,12 @@ a {
   position: absolute;
   top: 10px;
   color: #000;
-  opacity: 0.6;
   text-align: center;
-  display: block;
 }
 .content .sub_visual p img {
-  width: 60%;
+  width: 50%;
+  display: block;
+  margin: auto;
 }
 .content .sub_visual .p1 {
   font-weight: bold;
@@ -352,12 +355,14 @@ a {
   background-color: #fff;
   width: 20%;
   height: 90%;
-  margin-left: 650px;
+  margin-left: 750px;
   position: absolute;
   top: 10px;
   color: #000;
-  opacity: 0.6;
   text-align: center;
+}
+.content .sub_visual .p1 img {
+  width: 50%;
 }
 .content .sub_visual .p2 {
   font-weight: bold;
@@ -365,11 +370,10 @@ a {
   background-color: #fff;
   width: 20%;
   height: 90%;
-  margin-left: 1200px;
+  margin-left: 1400px;
   position: absolute;
   top: 10px;
   color: #000;
-  opacity: 0.6;
   text-align: center;
 }
 .content .sub_visual .p2 img {
@@ -385,11 +389,17 @@ a {
   color: #000;
   margin-bottom: 60px;
   text-align: center;
+  color: #000;
+  padding: 10px;
+  border: 0px;
+  border-top: 1px solid #fff;
+  opacity: 0.8;
+  width: 100%;
   /* Global CSS */
   /* Global CSS */
 }
 .content .inner h1 label {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 2rem;
   padding: 0.2em 0.4em;
   text-align: center;
@@ -503,9 +513,10 @@ a {
 }
 
 label {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 2rem;
   padding: 0.2em 0.4em;
+  text-align: center;
   text-align: center;
 }
 
@@ -576,7 +587,6 @@ fieldset {
 }
 
 label {
-  font-size: 20px;
   line-height: 2rem;
   padding: 0.2em 4em;
 }
@@ -589,8 +599,8 @@ label {
   appearance: none;
   border: max(2px, 0.1em) solid gray;
   border-radius: 50%;
-  width: 6.25em;
-  height: 6.25em;
+  width: 5.25em;
+  height: 5.25em;
   transition: border 0.5s ease-in-out;
 }
 
@@ -632,11 +642,25 @@ fieldset {
   margin: 0;
   padding: 40px 20px;
 }
+fieldset label span {
+  font: 10px;
+}
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+p {
+  display: block;
+  padding: 14px 40px;
+  font: bold 14px/1 "arial";
+  color: #777;
+}
+p:hover {
+  background: #555;
+  color: #fff;
 }
 
 main {
@@ -1238,6 +1262,108 @@ main nav p:hover.next::after, main nav p:hover.prev::after {
 .youtube .inner .vidList article .con span {
   font: bold 16px/1 "arial";
   color: orange;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+#metro nav {
+  width: 100%;
+  padding: 20px 10vw;
+  display: flex;
+  gap: 40px;
+}
+#metro nav a {
+  font: 20px/1 arial;
+  color: #999;
+}
+#metro nav a.on {
+  color: #000;
+}
+#metro section {
+  display: none;
+  padding: 5px;
+}
+#metro section.on {
+  display: block;
+}
+#metro section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#metro section article {
+  width: 25%;
+  height: 25vw;
+  float: left;
+  padding: 5px;
+}
+#metro section article .inner {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s;
+}
+#metro section.active article .inner {
+  opacity: 1;
+  transform: scale(1);
+}
+#metro section#perfume article:nth-of-type(1), #metro section#perfume article:nth-of-type(4), #metro section#perfume article:nth-of-type(9) {
+  width: 50%;
+}
+#metro section#eaudePerfume article .inner {
+  background-color: darkgreen;
+}
+#metro section#eaudePerfume article:nth-of-type(3), #metro section#eaudePerfume article:nth-of-type(9) {
+  width: 50%;
+}
+#metro section#eaudetoilette article .inner {
+  background-color: darkgreen;
+}
+#metro section#eaudetoilette article:nth-of-type(3), #metro section#eaudetoilette article:nth-of-type(9) {
+  width: 50%;
 }
 
 @media screen and (max-width: 1179px) {
