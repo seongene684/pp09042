@@ -44,3 +44,50 @@ closes.forEach((el, index) => {
         for (let el of articles) el.classList.remove("hide");
     })
 })
+const panel = document.querySelector(".panel");
+const next1 = document.querySelector(".next1");
+const prev1 = document.querySelector(".prev1");
+// let enableClick = true;
+
+// 마지막 li를 떼어서 맨앞으로 붙여서 1부터 슬라이드가 시작되도록 
+// panel.prepend(panel.lastElementChild);
+
+panel.prepend(panel.children[panel.children.length -1]);
+
+next.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    panel.style.transition = "margin-left 0.5s";
+    panel.style.marginLeft = "-50%";
+
+    // 슬라이더 순환이 되기 위한 코드
+    panel.addEventListener("transitionend",()=>{
+        panel.appendChild(panel.children[0]);
+
+        panel.style.marginLeft = "-25%";
+        panel.style.transition = "none";
+
+
+    }, {once : true});
+
+    // once : true는 이 이벤트 리스너가 오직 한번만 실행 된 후 그 후 자동적으로 
+    // 제거 되도록 합니다 
+
+})
+
+prev.addEventListener("click",(e)=>{
+    e.preventDefault();
+
+    panel.computedStyleMap.transition = "margin-left 0.5s";
+    panel.computedStyleMap.marginright = "-50%";
+
+    // 슬라이더 순환이 되기 위한 코드
+    panel.addEventListener("transitionend",()=>{
+        // panel.appendChild(panel.children[0]);
+
+        panel.Style.marginleft = "-25%";
+        panel.style.transition = "none";
+        
+
+    }, {once : true});
+})
