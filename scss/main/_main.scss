@@ -334,6 +334,105 @@ main{
 	
 }
 
+div{
+	width: 90%;
+	height: 90%;
+	// opacity: ;
+	
+	h1{
+		text-align: center;
+
+		
+	}
+
+	.img1{
+		width: 90%;
+		height:90%;
+		// overflow: hidden;
+		// display: flex;
+		p{
+			text-align: center;
+		}
+		
+	
+		img{
+			width: 35%;
+			height: 70%;
+			padding:  10px ;
+			margin-top: 10%;
+			margin-left: 15%;
+			
+		}
+
+	
+		.sub_img1{
+			width: 60%;
+			height: 60%;
+			// display: flex;
+			display: block;
+			margin-left: 50%;
+			margin-top: -50%;
+
+			img{
+				margin-left: 50px;
+				width: 30%;
+				height: 100%;
+				
+			
+	
+			}
+		}
+	}
+	
+	
+
+	.img2{
+		width: 90%;
+		height: 90%;
+		margin-top:15%;
+	
+	
+		img{
+			width: 35%;
+			height: 70%;
+			padding: 10px;
+			margin-left: 70%;
+			
+			
+			
+			
+	
+		}
+	}
+	
+	.img3{
+		width: 90%;
+		height: 90%;
+	
+		img{
+			width: 35%;
+			height: 70%;
+			padding: 10px;
+			margin-top: 10%;
+			margin-left: 15%;
+		}
+	
+	
+	}
+	
+	.img4{
+		width: 90%;
+		height: 90%;
+	
+		img{
+			width: 35%;
+			height: 70%;
+			padding: 10px;
+			margin-left: 70%;
+		}
+	}
+}
+
 #banner{
     width: 100%; padding: 200px 0px; background-color: #FAD6D6;
 	border-bottom: -20px;
